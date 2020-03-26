@@ -1,5 +1,5 @@
 export const CAMPSITES = [
-    {
+    {//these are props of campsites within an array
         id: 0,
         name: 'React Lake Campground',
         image: 'assets/images2/react-lake.jpg',
