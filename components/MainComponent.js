@@ -10,6 +10,7 @@ import { CAMPSITES } from '../shared/campsites';
 import { COMMENTS } from '../shared/comments';
 import { PARTNERS } from '../shared/partners';
 import { PROMOTIONS } from '../shared/promotions'; 
+import About from './AboutComponent';
 
 
 class Main extends Component {
@@ -19,7 +20,8 @@ class Main extends Component {
             campsites: CAMPSITES,
             comments: COMMENTS,
             partners: PARTNERS,
-            promotions: PROMOTIONS
+            promotions: PROMOTIONS,
+            about: About
             
         };
     }
@@ -33,6 +35,7 @@ class Main extends Component {
                 campsite={this.state.campsites.filter(campsite => campsite.featured)[0]}
                 promotion={this.state.promotions.filter(promotion => promotion.featured)[0]}
                 partner={this.state.partners.filter(partner => partner.featured)[0]}
+                
             />
         );
     }
@@ -42,6 +45,7 @@ class Main extends Component {
             <CampsiteInfo 
                 campsite={this.state.campsites.filter(campsite => campsite.id === +match.params.campsiteId)[0]}
                 comments={this.state.comments.filter(comment => comment.campsiteId === +match.params.campsiteId)}
+                
             />
         );
     };    
@@ -54,6 +58,10 @@ class Main extends Component {
                     <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
                     <Route path='/directory/:campsiteId' component={CampsiteWithId} />
                     <Route exact path='/contactus' component={Contact} />
+                    <Route exact path='/contactus' component={Contact} />
+                    <Route exact path='/about' render={() => <About campsites={this.state.about} />} />
+                  
+                  
                     <Redirect to='/home' />
                 </Switch>
               <Footer/>
