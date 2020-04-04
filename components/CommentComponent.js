@@ -38,18 +38,17 @@ class CommentModal extends Component {
                     <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                       <ModalBody>
                       <LocalForm onSubmit={values => this.handleSubmit(values)}>
-                            <Row className="form-group">
-                                <Label htmlFor="rating" md={2}>Rating</Label>
-                                <Col md={12}>
-                                <Control.select model="user.number" id="user.number">
+                            <div className="form-group">
+                                <Label htmlFor="rating">Rating</Label> 
+                                <Control.select model=".rating" id="rating"
+                                    className="form-control">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
-                                </Control.select>
-                                </Col>
-                            </Row>
+                                </Control.select>       
+                            </div>
                             <Row className="form-group">
                                 <Label htmlFor="author" md={2}>YourName </Label>
                                 <Col md={12}>
