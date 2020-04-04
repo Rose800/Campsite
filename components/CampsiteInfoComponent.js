@@ -1,11 +1,12 @@
-import React from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import React, {Component} from 'react';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem,Button, Modal, ModalHeader, ModalBody,Form,FormGroup, Input, Label, } from 'reactstrap';
 import { Link } from 'react-router-dom';
-
+import CommentModal from './CommentComponent';
 
 
 //this is my compontent and how to build it
 
+    
     function RenderCampsite({campsite}) {
         return (
             <div className="col-md-5 m-1">
@@ -31,6 +32,7 @@ import { Link } from 'react-router-dom';
                             </div>
                         );
                     })}
+                    <CommentModal/>
                 </div>
             );
         }//this is an else
